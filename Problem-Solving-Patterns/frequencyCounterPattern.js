@@ -56,6 +56,7 @@ function validAnagram(str1, str2) {
     let object1 = {}
     let object2 = {}
     for (let val of str1.toLowerCase()) {
+        // if letter exists, increment, otherwise set to 1
         object1[val] = (object1[val] || 0) + 1
     }
     for (let val of str2.toLowerCase()) {
@@ -63,9 +64,11 @@ function validAnagram(str1, str2) {
     }
     // Check if keys are the same and if their values are the same too
     for (let key in object1) {
+        // If key is not in object2 return false
         if (!(key in object2)) {
             return false;
         }
+        // If both objects key's don't have the same value, return false
         if (object1[key] !== object2[key]) {
             return false;
         }
