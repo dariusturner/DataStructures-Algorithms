@@ -1,6 +1,6 @@
 //If the first index + the last index IS EQUAL TO 0 Return the pair
-//If the the pair IS GREATER THAN the 0 DECREMENT THE LAST INDEX and test it again
-//If the the pair IS LESS THAN the 0 INCREMENT THE FIRST INDEX and test it again
+//If the the pair IS GREATER THAN 0 DECREMENT THE LAST INDEX and test it again
+//If the the pair IS LESS THAN 0 INCREMENT THE FIRST INDEX and test it again
 function sumZero(arr) {
     let beg = 0;
     let end = arr.length - 1;
