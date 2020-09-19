@@ -16,7 +16,7 @@ function sumZero(arr) {
     }
 }
 
-console.log(sumZero([-5,-3,0,1,2,3,4]))
+//console.log(sumZero([-5,-3,0,1,2,3,4]))
 
 // Using Frequency Counter Pattern
 function countUniqueValues(arr) {
@@ -30,7 +30,7 @@ function countUniqueValues(arr) {
     return Object.keys(objOfUniques).length;
 }
 
-console.log(countUniqueValues([1,1,2,4,6,8,8]))
+//console.log(countUniqueValues([1,1,2,4,6,8,8]))
 
 // Using Mulitple Pointer Pattern
 function uniqueValues(arr) {
@@ -46,4 +46,34 @@ function uniqueValues(arr) {
     return i;
 }
 
-console.log(uniqueValues([1,1,2,4,6,8,8]))
+//console.log(uniqueValues([1,1,2,4,6,8,8]))
+
+
+//If a pairs average in a sorted array is the target average return true, otherwise return false
+function averagePair(arr, ave){
+    if (arr.length < 1) {
+        return false;
+    }
+    let index = 0;
+    let next = index + 1;
+    while (index < arr.length) {
+        let currentAverage = (arr[index] + arr[next]) / 2;
+        if (index === next) {
+            next++;
+        }
+        //REMOVE COMMENT BELOW TO TEST to see the iteration of the indexes (index and next) and each current average of each pair
+        //console.log("CurrentAverage:", currentAverage, "Index Values: ", arr[index], arr[next])
+        if (currentAverage === ave) {
+            return true;
+        }
+        if (next === arr.length - 1) {
+            index++;
+            next = index;
+        } else {
+            next++;
+        }
+    }
+    return false;
+  }
+
+  console.log(averagePair([1,3,3,5,6,7,10,12,19], 8));
