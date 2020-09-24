@@ -20,7 +20,7 @@ function sumZero(arr) {
 
 // Using Frequency Counter Pattern
 function countUniqueValues(arr) {
-    if (arr.length === 0) {return 0}
+    if (arr.length === 0) return 0;
     let objOfUniques = {};
     for (let val of arr) {
         // if number exists, increment, otherwise set to 1
@@ -34,7 +34,7 @@ function countUniqueValues(arr) {
 
 // Using Mulitple Pointer Pattern
 function uniqueValues(arr) {
-    if (arr.length === 0) {return 0}
+    if (arr.length === 0) return 0;
     let i = 0;
     for (let scout = 1; scout < arr.length; scout++) {
         if (arr[i] !== arr[scout]) {
